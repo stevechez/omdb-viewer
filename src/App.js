@@ -13,7 +13,7 @@ import {
 } from 'antd';
 import 'antd/dist/antd.css';
 
-const API_KEY = 'a50aff0f';
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const { Meta } = Card;
@@ -40,8 +40,7 @@ const ColCardBox = ({ Title, imdbID, Poster, Type, ShowDetail, DetailRequest, Ac
     ActivateModal(true);
     DetailRequest(true);
 
-    fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`)
-
+    fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${REACT_APP_API_KEY}`)
       .then(resp => resp.json())
       .then(response => {
         DetailRequest(false);
@@ -136,7 +135,7 @@ function App() {
     setError(null);
     setData(null);
 
-    fetch(`http://www.omdbapi.com/?s=${q}&apikey=${API_KEY}`)
+    fetch(`http://www.omdbapi.com/?s=${q}&apikey=${REACT_APP_API_KEY}`)
       .then(resp => resp)
       .then(resp => resp.json())
       .then(response => {
