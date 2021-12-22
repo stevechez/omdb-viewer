@@ -12,11 +12,10 @@ import {
   Typography
 } from 'antd';
 import 'antd/dist/antd.css';
-import Icon from './components/header/Icon';
 import Navbar from './components/header/NavBar'
 
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 const { Search } = Input;
 const { Meta } = Card;
 const TextTitle = Typography.Title;
