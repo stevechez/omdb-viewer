@@ -12,6 +12,8 @@ import {
   Typography
 } from 'antd';
 import 'antd/dist/antd.css';
+import Icon from './components/header/Icon';
+import Navbar from './components/header/NavBar'
 
 const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 const { Header, Content, Footer } = Layout;
@@ -69,11 +71,6 @@ const ColCardBox = ({ Title, imdbID, Poster, Type, ShowDetail, DetailRequest, Ac
             title={Title}
             description={false}
           />
-          <Row style={{ marginTop: '10px' }} className="gutter-row">
-            <Col>
-              <Tag color="magenta">{Type}</Tag>
-            </Col>
-          </Row>
         </Card>
       </div>
     </Col>
@@ -159,13 +156,10 @@ function App() {
   return (
     <div className="App">
       <Layout className="layout">
-        <Header>
-          <div style={{ textAlign: 'center' }}>
-            <TextTitle style={{ color: '#ffffff', marginTop: '14px' }} level={3}>OMDB API + React</TextTitle>
-          </div>
-        </Header>
+        <Navbar />
         <Content style={{ padding: '0 50px' }}>
           <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
+
             <SearchBox searchHandler={setQuery} />
             <br />
 
@@ -205,7 +199,7 @@ function App() {
             }
           </Modal>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>OMDB Movies ©2020</Footer>
+        <Footer style={{ textAlign: 'center' }}>OMDB Site</Footer>
       </Layout>
     </div>
   );
